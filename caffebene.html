@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
         *{margin: 0;padding: 0;}
         ul{list-style: none;}
@@ -32,10 +33,12 @@
          .head .lang p:last-child a{margin-top: 10px;}
          .head .lang p:last-child a{display: block;border-radius: 50px;padding: 8px 40px;font-size: 14px;background-color: #00a5b1;color: #fff;}
 
-         .ban img{width: 100%; object-fit: cover;}
+         /* 수정 */
 
-
-        /* 수정 */
+         .ban{width: 100%;height: 720px;}
+         .ban .swiper {width: 100%;height: 100%;}
+         .ban .swiper-slide {text-align: center;font-size: 18px;background: #fff;display: flex;justify-content: center;align-items: center;}
+         .ban .swiper-slide img {display: block;width: 100%;height: 100%; object-fit: cover;}
 
          .main{width: 1190px;margin: 0 auto;font-size: 0;height: 1068px;}
          .main h4{font-size: 22px;color: #3a466a;text-transform: capitalize;margin: 60px 0 28px;}
@@ -176,7 +179,22 @@
             <p><a href="#">가맹문의</a></p>
         </div>
     </div>
-    <div class="ban"><img src="./images/blue.jpg" alt="main"></div>
+    <div class="ban">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                    <img src="images/banner01.jpg" alt="01">
+              </div>
+              <div class="swiper-slide">
+                    <img src="images/banner02.jpg" alt="02">
+              </div>
+              <div class="swiper-slide">
+                    <img src="images/banner03.jpg" alt="03">
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
     <div class="main">
         <h4>contents</h4>
         <ul class="left">
@@ -367,5 +385,20 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            loop: true,
+            autoplay: {
+                delay: 3000,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
 </body>
 </html>
